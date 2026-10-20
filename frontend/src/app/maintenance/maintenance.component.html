@@ -1,0 +1,93 @@
+<body style="background-image: url('assets/pictureMaintenance.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh; margin: 0; padding: 0;">
+
+<header>
+</header>
+<br><br>
+<main>
+  <h2 *ngIf="user.type === 'O'">Završeni poslovi i održavanja</h2>
+  <!-- Tabela za zavrsene poslove -->
+  <table *ngIf="user.type === 'O'">
+    <thead>
+      <tr>
+        <th>Datum kraja</th>
+        <th>Kvadratura bazena</th>
+        <th>Kvadratura fontana</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of bookings">
+        <td *ngIf="booking.username === logged && booking.done == true">{{ booking.doneDate | date: 'dd.MM.yyyy' }}</td>
+        <td *ngIf="booking.username === logged && booking.done == true">{{ booking.gardenPool ? booking.gardenPool : 'nema' }}</td>
+        <td *ngIf="booking.username === logged && booking.done == true">{{ booking.fountain ? booking.fountain : 'nema' }}</td>
+        <td *ngIf="booking.username === logged && booking.done == true">
+          <!-- Provera da li je prošlo 6 ili više meseci od doneDate -->
+          <button *ngIf="isOlderThanSixMonths(booking.doneDate) && !booking.acceptedMaintenance" (click)="rebook(booking)">Zakaži održavanje u istoj firmi</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <hr>
+
+
+  <!-- Tabela za nezavrsene poslove -->
+  <h2>Nezavršeni poslovi i održavanja</h2>
+  <table *ngIf="user.type === 'O'">
+    <thead>
+      <tr>
+        <th>Datum zakazivanja</th>
+        <th>Kvadratura bazena</th>
+        <th>Kvadratura fontana</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of bookings">
+        <td *ngIf="booking.username === logged && booking.done == false">{{ booking.bookingDate | date: 'dd.MM.yyyy' }}</td>
+        <td *ngIf="booking.username === logged && booking.done == false">{{ booking.gardenPool ? booking.gardenPool : 'nema' }}</td>
+        <td *ngIf="booking.username === logged && booking.done == false">{{ booking.fountain ? booking.fountain : 'nema' }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Tabela za dekoratora -->
+  <table *ngIf="user.type === 'D'">
+    <thead>
+      <tr>
+        <th>Datum kraja</th>
+        <th>Kvadratura bazena</th>
+        <th>Kvadratura fontana</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of bookings">
+        <td *ngIf="booking.firmname === user.firm && booking.decorator == user.username && booking.done == false">{{ booking.doneDate | date: 'dd.MM.yyyy' }}</td>
+        <td *ngIf="booking.firmname === user.firm && booking.decorator == user.username && booking.done == false">{{ booking.gardenPool ? booking.gardenPool : 'nema' }}</td>
+        <td *ngIf="booking.firmname === user.firm && booking.decorator == user.username && booking.done == false">{{ booking.fountain ? booking.fountain : 'nema' }}</td>
+        <td *ngIf="booking.firmname === user.firm && booking.decorator == user.username && booking.done == false && booking.maintenance >= 1 && !booking.acceptedMaintenance">
+          <!-- <button (click)="accept(booking)">Potvrdi održavanje</button> -->
+          <button (click)="reject(booking)">Odbij održavanje</button></td>
+        <td *ngIf="booking.firmname === user.firm && booking.decorator == user.username && booking.done == false && booking.maintenance >= 1  && !booking.acceptedMaintenance">
+          <button (click)="showDateTimePicker = true">Potvrdi održavanje</button>
+          <!-- Polje za unos datuma i vremena -->
+          <div *ngIf="showDateTimePicker">
+            <label for="date">Datum:</label>
+            <input type="date" id="date" [(ngModel)]="bookingDate">
+
+            <label for="time">Vreme:</label>
+            <input type="time" id="time" [(ngModel)]="bookingTime">
+
+            <button (click)="accept(booking)">Potvrdi</button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>
+<br><br>
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <p>&copy; 2024 Vaša kompanija. Sva prava zadržana.</p>
+  </footer>

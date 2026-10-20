@@ -1,0 +1,34 @@
+<body style="background-image: url('assets/pictureProfile.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh; margin: 0; padding: 0;">
+
+<!-- Header -->
+  <header>
+  </header>
+
+  <br><br>
+  <!-- Glavni sadržaj -->
+  <main>
+    <h2>Ulogujte se kao administrator</h2>
+    <table>
+      <tr>
+        <th>Korisničko ime:</th>
+        <th><input type="text" [(ngModel)]="username" name="username" required></th>
+      </tr>
+      <tr>
+        <th>Lozinka:</th>
+        <th><input type="password" [(ngModel)]="password" name="password" required></th>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button (click)="login()">Uloguj se</button>
+        </td>
+      </tr>
+    </table>
+    <a routerLink="/">Povratak na pocetnu stranu</a>
+  </main>
+
+  <br><br>
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <p>&copy; 2024 Vaša kompanija. Sva prava zadržana.</p>
+  </footer>

@@ -1,0 +1,103 @@
+/* Osnovni stilovi za telo */
+html, body {
+  height: 100%; /* Osigurava da html i body zauzimaju celu visinu ekrana */
+  margin: 0; /* Uklanja podrazumevani margin */
+  padding: 0;
+  overflow-x: hidden; /* Sprečava horizontalno pomeranje stranice */
+  font-family: Arial, sans-serif; /* Osnovna font porodica */
+  display: flex; /* Postavlja html i body kao flex container */
+  flex-direction: column; /* Sadržaj ide vertikalno */
+  min-height: 100vh; /* Osigurava da telo zauzima celu visinu prozora */
+}
+
+/* Stil za header */
+header {
+  background-color: rgba(56, 142, 60, 0.8); /* Polu-transparentna tamno zelena */
+  color: white; /* Bela boja teksta */
+  text-align: center; /* Centriranje teksta */
+  padding: 20px 0; /* Vertikalni padding */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Blaga senka ispod zaglavlja */
+}
+
+/* Stil za glavni sadržaj */
+main {
+  flex: 1; /* Glavni sadržaj zauzima sav raspoloživi prostor između headera i footera */
+  padding: 20px; /* Dodaje padding oko sadržaja */
+  max-width: 1200px; /* Maksimalna širina glavnog sadržaja */
+  margin: 0 auto; /* Centriranje sadržaja */
+  background-color: rgba(255, 255, 255, 0.8); /* Polu-transparentna bela pozadina */
+  border-radius: 10px; /* Zaobljeni uglovi */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Blaga senka ispod sadržaja */
+  overflow: auto; /* Omogućava skrolovanje ako sadržaj pređe vidljivost */
+}
+
+/* Stil za footer */
+footer {
+  background-color: rgba(56, 142, 60, 0.8); /* Polu-transparentna tamno zelena */
+  color: white; /* Bela boja teksta */
+  text-align: center; /* Centriranje teksta */
+  padding: 10px 0; /* Vertikalni padding */
+  margin-top: auto; /* Pomeranje footer-a na dno stranice */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Blaga senka iznad footer-a */
+  width: 100%; /* Footer zauzima celu širinu ekrana */
+  position: relative; /* Osigurava da footer ostaje u okviru stranice */
+  bottom: 0; /* Postavlja footer na dno stranice */
+}
+
+/* Stil za tabelu */
+table {
+  width: 100%; /* Ova vrednost može biti promenjena na fiksnu vrednost ako je potrebno */
+  max-width: 800px; /* Postavi maksimalnu širinu prema potrebama */
+  margin-top: 20px; /* Razmak iznad tabele */
+  border-collapse: collapse; /* Uklanja razmak između ćelija */
+  table-layout: fixed; /* Fiksna veličina kolona */
+}
+
+th, td {
+  border: 1px solid #ddd; /* Blaga ivica oko ćelija */
+  padding: 10px; /* Padding unutar ćelija */
+  text-align: left; /* Tekst je levo poravnat */
+}
+
+th {
+  background-color: #388E3C; /* Tamnija zelena pozadina zaglavlja tabele */
+  color: white; /* Bela boja teksta u zaglavlju */
+}
+
+td {
+  background-color: rgba(255, 255, 255, 0.9); /* Blago transparentna bela pozadina ćelija */
+}
+
+/* Stil za formu i stepper */
+mat-form-field {
+  width: 100%; /* Širina form polja */
+}
+
+mat-radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+mat-checkbox {
+  display: block;
+}
+
+/* Stil za input polja */
+input[matInput] {
+  width: calc(100% - 20px); /* Širina input polja */
+  padding: 10px; /* Padding unutar input polja */
+  margin-bottom: 20px; /* Razmak ispod svakog inputa */
+  border: 1px solid #ddd; /* Blaga ivica oko input polja */
+  border-radius: 4px; /* Zaobljene ivice */
+  box-sizing: border-box; /* Uklanja dodatni padding */
+  font-size: 1em; /* Font veličina inputa */
+}
+
+mat-select {
+  width: 100%; /* Širina select polja */
+}
+
+/* Stil za mat-stepper dugmadi */
+button[mat-button] {
+  margin-top: 20px; /* Razmak iznad dugmadi */
+}

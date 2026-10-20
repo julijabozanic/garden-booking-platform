@@ -1,0 +1,203 @@
+/* Postavke za celo telo stranice */
+html, body {
+    height: 100%; /* Postavi visinu na 100% */
+    margin: 0; /* Ukloni podrazumevani margin */
+    padding: 0; /* Ukloni padding */
+    overflow-x: hidden; /* Spreči horizontalno pomeranje stranice */
+    position: relative; /* Pozicioniranje relativno */
+  }
+  
+  /* Pozadinska slika za body */
+  body {
+    background-image: url('/assets/grass.jpg'); /* Putanja do pozadinske slike */
+    background-size: cover; /* Pokriva celu površinu */
+    background-position: center; /* Centriranje slike */
+    background-repeat: no-repeat; /* Bez ponavljanja slike */
+  }
+  
+  /* Stil za header */
+  header {
+    background-color: rgba(56, 142, 60, 0.8); /* Polu-transparentna tamno zelena za zaglavlje */
+    color: white; /* Bela boja teksta */
+    text-align: center; /* Centriranje teksta */
+    padding: 20px 0; /* Vertikalni padding */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Blaga senka ispod zaglavlja */
+  }
+  
+  /* Stil za navigaciju u headeru */
+  nav a {
+    color: white; /* Bela boja teksta za linkove */
+    text-decoration: none; /* Uklanja podvlačenje linkova */
+    margin: 0 15px; /* Razmak između linkova */
+    font-weight: bold; /* Podebljan tekst */
+  }
+  
+  nav a:hover {
+    text-decoration: underline; /* Podvlačenje linka na hover */
+  }
+  
+
+  /* Stil za glavni sadržaj */
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centriranje forme horizontalno */
+    justify-content: center; /* Centriranje forme vertikalno */
+    padding: 20px; /* Dodaje padding oko glavnog sadržaja */
+    flex: 1; /* Omogućava glavnom sadržaju da raste i zauzima sav preostali prostor */
+  }
+  
+/* Stil za tabelu u glavnom sadržaju */
+table {
+  width: 100%; /* Ova vrednost može biti promenjena na fiksnu vrednost ako je potrebno */
+  max-width: 800px; /* Postavi maksimalnu širinu prema potrebama */
+  min-width: 600px; /* Opcionalno, postavi minimalnu širinu ako je potrebno */
+  border-collapse: collapse; /* Uklanja razmak između ćelija */
+  margin-top: 20px; /* Razmak iznad tabele */
+  table-layout: fixed; /* Fiksna veličina kolona */
+  border-radius: 15px; /* Oble ivice tabele */
+  overflow: hidden; /* Sprečava da ćoškovi ćelija prelaze preko oblih ivica */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+th, td {
+  border: 1px solid #ddd; /* Blaga ivica oko ćelija */
+  padding: 10px; /* Padding unutar ćelija */
+  text-align: center; /* Centriran tekst u ćelijama */
+  width: 200px; /* Fiksna širina kolona (možeš prilagoditi prema potrebama) */
+}
+
+th {
+  background-color: #388E3C; /* Tamnija zelena pozadina zaglavlja tabele */
+  color: white; /* Bela boja teksta u zaglavlju */
+  cursor: pointer; /* Kursor za klik */
+}
+
+td {
+  background-color: rgba(255, 255, 255, 0.9); /* Blago transparentna bela pozadina ćelija */
+}
+
+/* Opcionalno: Dodaj oble ivice i na pojedinačne ćelije ako je potrebno */
+table th:first-child {
+  border-top-left-radius: 15px;
+}
+
+table th:last-child {
+  border-top-right-radius: 15px;
+}
+
+table td:first-child {
+  border-bottom-left-radius: 15px;
+}
+
+table td:last-child {
+  border-bottom-right-radius: 15px;
+}
+
+  
+  /* Stil za input elemente */
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  select {
+    width: 100%; /* Širina inputa */
+    padding: 8px; /* Unutrašnji padding */
+    margin-top: 4px; /* Mali razmak iznad */
+    margin-bottom: 12px; /* Razmak ispod svakog inputa */
+    border: 1px solid #ddd; /* Blagi okvir */
+    border-radius: 4px; /* Zaobljene ivice */
+    box-sizing: border-box; /* Uklanja dodatni padding */
+  }
+  
+  /* Stil za dugme */
+  button {
+    background-color: #388E3C; /* Tamnija zelena za dugme */
+    color: white; /* Bela boja teksta */
+    padding: 12px 20px; /* Unutrašnji padding */
+    border: none; /* Bez ivice */
+    border-radius: 4px; /* Zaobljene ivice */
+    cursor: pointer; /* Kursor za klik */
+    margin-top: 12px; /* Razmak iznad dugmeta */
+    width: 100%; /* Dugme je široko kao i tabela */
+    transition: background-color 0.3s; /* Animacija za hover */
+  }
+  
+  button:hover {
+    background-color: #2e7d32; /* Tamnija zelena na hover */
+  }
+  
+  /* Stil za listu dekoratera */
+  ul {
+    list-style-type: none; /* Uklanja oznake za liste */
+    padding: 0; /* Uklanja padding */
+    background-color: rgba(76, 175, 80, 0.8); /* Polu-transparentna zelena pozadina */
+    margin: 0;
+    border-radius: 8px; /* Zaobljene ivice */
+    overflow: hidden; /* Sprečava izlaženje sadržaja izvan ivica */
+    width: 100%; /* Širina liste */
+    max-width: 600px; /* Maksimalna širina liste */
+  }
+  
+  li {
+    padding: 10px; /* Dodaje padding unutar svakog elementa liste */
+    margin-bottom: 5px; /* Dodaje razmak između elemenata liste */
+    color: white; /* Bela boja teksta */
+  }
+  
+  li:last-child {
+    margin-bottom: 0; /* Uklanja donji razmak za poslednji element liste */
+  }
+  
+  h3 {
+    font-size: 2em; /* Povećana veličina fonta */
+    color: #2e7d32; /* Tamnija zelena boja naslova */
+    background-color: rgba(255, 255, 255, 0.9); /* Bela blago transparentna pozadina */
+    padding: 10px; /* Dodaje padding oko teksta */
+    border-radius: 5px; /* Zaobljeni uglovi */
+    text-align: center; /* Centriranje naslova */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Dodata blaga senka */
+    margin-bottom: 20px; /* Razmak ispod naslova */
+  }
+  
+/* Stil za footer */
+footer {
+    background-color: rgba(56, 142, 60, 0.8); /* Polu-transparentna tamno zelena za footer */
+    color: white; /* Bela boja teksta */
+    text-align: center; /* Centriranje teksta */
+    padding: 10px 0; /* Vertikalni padding */
+    margin-top: auto; /* Pomeranje footer-a na dno stranice */
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);  /*Blaga senka iznad footer-a */
+    width: 100%; /* Osigurava da footer zauzima punu širinu */
+    display: flex; /* Koristi flexbox za centriranje sadržaja */
+    justify-content: center; /* Horizontalno centriranje sadržaja */
+    align-items: center; /* Vertikalno centriranje sadržaja */
+  }
+
+  div {
+    width: 100%; /* Div će zauzeti 100% širine roditeljskog elementa */
+    height: auto; /* Visina će se automatski prilagoditi sadržaju */
+    background-color: rgba(248, 249, 250, 0.6); /* Svetlosiva pozadina */
+    padding: 20px; /* Unutrašnji razmak */
+    margin: 20px auto; /* Spoljašnji razmak i centriranje */
+    border-radius: 10px; /* Zaobljeni uglovi */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Senka ispod */
+    max-width: 800px; /* Maksimalna širina */
+    border: 1px solid #dee2e6; /* Svetlosiva ivica */
+    font-family: Arial, sans-serif; /* Font */
+    color: #333; /* Boja teksta */
+    text-align: center;
+  }
+  
+  /* Stil za listu unutar diva */
+div ul {
+  display: inline-block; /* Lista postaje inline-block element */
+  width: 100%; /* Lista će zauzeti 100% širine diva */
+  margin: 0 auto; /* Uklanja podrazumevane margine oko liste */
+  padding: 0; /* Uklanja podrazumevane paddinge liste */
+  list-style-position: inside; /* Prilagođava položaj oznaka liste prema unutrašnjosti */
+}
+
+  

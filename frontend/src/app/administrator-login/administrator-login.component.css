@@ -1,0 +1,132 @@
+/* Osnovni stilovi za telo */
+html, body {
+  height: 100%; /* Visina 100% */
+  margin: 0; /* Ukloni podrazumevani margin */
+  padding: 0; 
+  overflow-x: hidden; /* Spreči horizontalno pomeranje stranice */
+  font-family: Arial, sans-serif; /* Osnovna font porodica */
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+/* Stil za header */
+header {
+  background-color: rgba(56, 142, 60, 0.8);
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Stil za glavni sadržaj */
+main {
+  width: 600px; /* Fiksna širina */
+  height: 400px; /* Fiksna visina */
+  flex: 1; /* Glavni sadržaj rasteže se kako bi zauzeo sav raspoloživi prostor */
+  padding: 20px; /* Dodaje padding oko sadržaja */
+  max-width: 1000px; /* Maksimalna širina glavnog sadržaja */
+  margin: 0 auto; /* Centriranje sadržaja */
+  background-color: rgba(255, 255, 255, 0.8); /* Polu-transparentna bela pozadina */
+  border-radius: 10px; /* Zaobljeni uglovi */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Blaga senka ispod sadržaja */
+}
+
+/* Poboljšani stil za naslove */
+h2 {
+  font-size: 2em; /* Povećana veličina fonta */
+  color: #2e7d32; /* Tamnija zelena boja naslova */
+  background-color: rgba(255, 255, 255, 0.9); /* Bela blago transparentna pozadina */
+  padding: 10px; /* Dodaje padding oko teksta */
+  border-radius: 5px; /* Zaobljeni uglovi */
+  text-align: center; /* Centriranje naslova */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Dodata blaga senka */
+  margin-bottom: 20px; /* Razmak ispod naslova */
+}
+
+/* Omotač za tabelu */
+.table-wrapper {
+  max-height: 400px; /* Postavlja maksimalnu visinu za omotač tabele, po potrebi možeš prilagoditi */
+  overflow-y: auto; /* Omogućava vertikalno skrolovanje */
+  margin-top: 20px; /* Razmak iznad tabele */
+  border: 1px solid #ddd; /* Opcionalno, dodajemo ivicu oko omotača */
+}
+
+a {
+  color: rgb(34, 80, 49); /* Boja linka na zelenoj pozadini */
+  text-decoration: underline; /* Podvučeni link */
+  display: inline-block; /* Blok za dodatni padding */
+  margin-top: 20px; /* Razmak iznad linka */
+}
+
+/* Stil za tabelu */
+table {
+  width: 100%; /* Ova vrednost omogućava da tabela zauzme svu širinu omotača */
+  border-collapse: collapse; /* Uklanja razmak između ćelija */
+  table-layout: auto; /* Kolone se prilagođavaju sadržaju */
+}
+
+* {
+  box-sizing: border-box;
+}
+
+th, td {
+  border: 1px solid #ddd; /* Blaga ivica oko ćelija */
+  padding: 10px; /* Padding unutar ćelija */
+  text-align: center; /* Centrirani tekst */
+}
+
+th {
+  background-color: #388E3C; /* Tamnija zelena pozadina zaglavlja tabele */
+  color: white; /* Bela boja teksta u zaglavlju */
+  cursor: pointer; /* Kursor za klik */
+}
+
+td {
+  background-color: rgba(255, 255, 255, 0.9); /* Blago transparentna bela pozadina ćelija */
+}
+
+/* Opcionalno: dodaj stil za omotač kada je tabela skrolovana */
+.table-wrapper::-webkit-scrollbar {
+  width: 8px; /* Širina scrollbar-a */
+}
+
+.table-wrapper::-webkit-scrollbar-thumb {
+  background-color: #888; /* Boja scrollbar-a */
+  border-radius: 4px; /* Zaobljeni uglovi scrollbar-a */
+}
+
+input[type="text"], input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1em;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #388E3C;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1em;
+}
+
+button:hover {
+  background-color: #2e7d32;
+}
+
+/* Stil za footer */
+footer {
+  background-color: rgba(56, 142, 60, 0.8); /* Polu-transparentna tamno zelena */
+  color: white; /* Bela boja teksta */
+  text-align: center; /* Centriranje teksta */
+  padding: 10px 0; /* Vertikalni padding */
+  box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1); /* Blaga senka iznad footer-a */
+  width: 100%; /* Footer zauzima celu širinu */
+}

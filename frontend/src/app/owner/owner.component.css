@@ -1,0 +1,71 @@
+/* Osnovni stilovi za navigacionu traku */
+.navbar {
+    background-color: #4CAF50; /* Tamno zelena pozadina */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Blaga senka ispod navigacije */
+    padding: 10px 20px; /* Padding unutar navigacije */
+  }
+  
+  .navbar-brand {
+    color: rgb(21, 123, 36); /* Bela boja teksta za brend */
+    font-size: 1.5em; /* Povećana veličina fonta */
+    font-weight: bold; /* Podebljan font */
+  }
+  
+  .navbar-nav .nav-item .nav-link {
+    color: rgb(21, 123, 36); /* Bela boja teksta za linkove */
+    margin-right: 15px; /* Razmak između linkova */
+    font-size: 1.1em; /* Povećana veličina fonta */
+  }
+  
+  .navbar-nav .nav-item .nav-link:hover {
+    color: rgb(21, 123, 36); /* Svetlija boja pri prelasku mišem */
+    text-decoration: underline; /* Podvlačenje pri prelasku mišem */
+  }
+  
+  .navbar-nav .nav-item .active {
+    color: rgb(21, 123, 36); /* Zlatna boja za aktivni link */
+    
+  }
+  
+  /* Stil za dugme za toggle navigaciju (za manje ekrane) */
+  .navbar-toggler {
+    border-color: white; /* Bela boja okvira dugmeta */
+  }
+  
+  .navbar-toggler-icon {
+    background-color: rgb(21, 123, 36); /* Bela boja ikone za toggle */
+  }
+  
+  /* Stil za navigaciju na manjim ekranima */
+  @media (max-width: 991.98px) {
+    .navbar-collapse {
+      background-color: rgb(21, 123, 36); /* Ista pozadina za mobilne uređaje */
+      padding: 10px 20px;
+    }
+  
+    .navbar-nav .nav-item .nav-link {
+      color: rgb(21, 123, 36); /* Bela boja teksta za linkove na manjim ekranima */
+      margin: 10px 0; /* Razmak između linkova na manjim ekranima */
+    }
+  }
+
+  .navbar-brand:hover {
+    color: rgb(21, 123, 36); /* Zelena boja pri prelasku mišem preko brenda */
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5); /* Svetlosni efekat ispod teksta */
+  }
+  
+  .navbar-nav .nav-item .nav-link,
+.navbar-brand {
+  transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+/* Stilizovanje glavnog sadržaja */
+main {
+    padding: 20px;
+    background-color: rgb(21, 123, 36); /* Svetla pozadina za sadržaj */
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px; /* Maksimalna širina sadržaja */
+  }
+  

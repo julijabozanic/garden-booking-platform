@@ -1,0 +1,35 @@
+{
+  "shapes": [
+    {
+      "type": "rectangle",
+      "x": 50,
+      "y": 50,
+      "width": 100,
+      "height": 50,
+      "color": "#00FF00" 
+    },
+    {
+      "type": "rectangle",
+      "x": 200,
+      "y": 50,
+      "width": 150,
+      "height": 75,
+      "color": "#0000FF" 
+    },
+    {
+      "type": "circle",
+      "x": 100,
+      "y": 200,
+      "radius": 25,
+      "color": "#8B4513" 
+    },
+    {
+      "type": "rectangle",
+      "x": 200,
+      "y": 200,
+      "width": 75,
+      "height": 30,
+      "color": "#808080" 
+    }
+  ]
+}

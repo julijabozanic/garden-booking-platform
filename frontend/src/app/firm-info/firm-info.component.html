@@ -1,0 +1,175 @@
+<body style="background-image: url('assets/pictureFirmInfo.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh; margin: 0; padding: 0;">
+  
+  <header>
+  </header>
+
+  <br>
+  
+  <main>
+    <div *ngIf="firm; else noFirm">
+      <h2>Informacije o firmi</h2>
+      
+      <p><strong>Naziv:</strong> {{ firm.name }}</p>
+      <p><strong>Adresa:</strong> {{ firm.address }}</p>
+      <p><strong>Telefon:</strong> {{ firm.contact }}</p>
+    
+      <table>
+        <thead>
+          <tr>
+            <th>Usluga</th>
+            <th>Cena</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let service of firm.services">
+            <td>{{ service.name }}</td>
+            <td>{{ service.price }} RSD</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <ng-template #noFirm>
+      <p>Nema informacija o firmi.</p>
+    </ng-template>
+
+    <br>
+    <a routerLink="/">Povratak na pocetnu stranu</a>
+    
+    <hr>
+    <br><br>
+
+    <mat-horizontal-stepper #stepper [linear]="true">
+      <!-- prvi korak -->
+      <mat-step [stepControl]="firstFormGroup">
+        <form [formGroup]="firstFormGroup">
+          <ng-template matStepLabel>Korak 1</ng-template>
+          <mat-form-field>
+            <mat-label>Izaberite datum i vreme</mat-label>
+            <input matInput [ngxMatDatetimePicker]="picker" formControlName="dateTime" placeholder="Unesite datum i vreme">
+            <ngx-mat-datepicker-toggle matSuffix [for]="picker"></ngx-mat-datepicker-toggle>
+            <ngx-mat-datetime-picker #picker></ngx-mat-datetime-picker>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Kvadratura</mat-label>
+            <input matInput placeholder="Unesite ukupnu kvadraturu bašte:" formControlName="area" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Tip</mat-label>
+            <mat-select formControlName="type" placeholder="Izaberite tip">
+              <mat-option value="private">Privatna bašta</mat-option>
+              <mat-option value="restaurant">Restoranska bašta</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <div>
+            <button mat-button (click)="goToNextStep()" [disabled]="!firstFormGroup.valid">Sledeće</button>
+          </div>
+        </form>
+      </mat-step>
+    
+      <!-- drugi korak -->
+      <mat-step *ngIf="selectedType !== 'restaurant'" [stepControl]="secondFormGroup">
+        <form [formGroup]="secondFormGroup">
+          <ng-template matStepLabel>Korak 2</ng-template>
+          <mat-form-field>
+            <mat-label>Kvadratura baste pod bazenom:</mat-label>
+            <input matInput placeholder="Unesite kvadraturu" formControlName="gardenPool" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Kvadratura baste pod zelenilom:</mat-label>
+            <input matInput placeholder="Unesite kvadraturu" formControlName="gardenGreen" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Kvadratura baste pod lezaljkama i stolovima:</mat-label>
+            <input matInput placeholder="Unesite kvadraturu" formControlName="gardenFurniture" required>
+          </mat-form-field>
+          <div>
+            <button mat-button matStepperPrevious>Prethodno</button>
+            <button mat-button matStepperNext [disabled]="!secondFormGroup.valid">Sledeće</button>
+          </div>
+        </form>
+      </mat-step>
+    
+      <!-- treći korak -->
+      <mat-step *ngIf="selectedType !== 'private'" [stepControl]="thirdFormGroup">
+        <form [formGroup]="thirdFormGroup">
+          <ng-template matStepLabel>Korak 3</ng-template>
+          <mat-form-field>
+            <mat-label>Kvadratura baste pod fontanom:</mat-label>
+            <input matInput placeholder="Unesite kvadraturu" formControlName="fountain" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Kvadratura baste pod zelenilom:</mat-label>
+            <input matInput placeholder="Unesite kvadraturu" formControlName="gardenGreen" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Broj stolova</mat-label>
+            <input matInput placeholder="Unesite broj stolova" formControlName="tablesCount" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Broj stolica</mat-label>
+            <input matInput placeholder="Unesite broj stolica" formControlName="chairsCount" required>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>Opis</mat-label>
+            <textarea matInput formControlName="description" placeholder="Unesite opis sa dodatnih zahtevima:" rows="4"></textarea>
+          </mat-form-field>
+
+          <!-- Checkbox-ovi za usluge -->
+          <div formArrayName="services">
+            <div *ngFor="let service of firm?.services; let i = index">
+              <mat-checkbox [formControlName]="i">
+                {{ service.name }} (Cena: {{ service.price }} RSD)
+              </mat-checkbox>
+            </div>
+          </div>
+
+          <div>
+            <button mat-button matStepperPrevious>Prethodno</button>
+            <button mat-button matStepperNext [disabled]="!thirdFormGroup.valid">Sledeće</button>
+          </div>
+        </form>
+      </mat-step>
+
+    
+      <!-- četvrti korak -->
+      <mat-step>
+        <ng-template matStepLabel>Pregled</ng-template>
+        <div *ngIf="firstFormGroup.get('type')?.value === 'private'">
+          <p>Tip bašte: privatna bašta</p>
+          <p>Datum i vreme izvršavanja radova: {{ firstFormGroup.get('dateTime')?.value | date:'short' }}</p>
+          <p>Kvadratura bazena: {{ secondFormGroup.get('gardenPool')?.value }}</p>
+          <p>Kvadratura zelenila: {{ secondFormGroup.get('gardenGreen')?.value }}</p>
+          <p>Kvadratura sa nameštajem: {{ secondFormGroup.get('gardenFurniture')?.value }}</p>
+        </div>
+        <div *ngIf="firstFormGroup.get('type')?.value === 'restaurant'">
+          <p>Tip bašte: restoranska bašta</p>
+          <p>Datum i vreme izvršavanja radova: {{ firstFormGroup.get('dateTime')?.value | date:'short' }}</p>
+          <p>Kvadratura fontane: {{ thirdFormGroup.get('fountain')?.value }}</p>
+          <p>Kvadratura zelenila: {{ thirdFormGroup.get('gardenGreen')?.value }}</p>
+          <p>Broj stolova: {{ thirdFormGroup.get('tablesCount')?.value }}</p>
+          <p>Broj stolica: {{ thirdFormGroup.get('chairsCount')?.value }}</p>
+          <p *ngIf="thirdFormGroup.get('description')?.value">Opis sa dodatnim zahtevima: {{ thirdFormGroup.get('description')?.value }}</p>
+        </div>
+        <p *ngIf="selectedServices.length > 0">Izabrali ste ove usluge:</p>
+        <ul *ngIf="selectedServices.length > 0">
+          <li *ngFor="let service of selectedServices">
+            {{ service.name }} (Cena: {{ service.price }} RSD)
+          </li>
+        </ul>
+        <div>
+          <button mat-button matStepperPrevious>Prethodno</button>
+          <button mat-button (click)="resetPage()">Reset</button>
+          <button mat-button (click)="createBooking()">Zakaži uređivanje bašte</button>
+        </div>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </main>
+
+  <br>
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <p>&copy; 2024 Vaša kompanija. Sva prava zadržana.</p>
+  </footer>

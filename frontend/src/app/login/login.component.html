@@ -1,0 +1,110 @@
+<body style="background-image: url('assets/grass.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh; margin: 0; padding: 0;">
+
+<!-- Header -->
+<header>
+  <nav>
+    <a routerLink="/">Početna</a> | 
+    <a routerLink="/registration">Registracija</a> | 
+    <a routerLink="/password-new">Promeni lozinku</a>
+  </nav>
+  <hr>
+</header>
+
+<!-- Glavni sadržaj -->
+<main>
+  <table>
+    <tr>
+      <th>Korisnicko ime: </th>
+      <th><input type="text" [(ngModel)]="username" name="username" required></th>
+    </tr>
+    <tr>
+      <th>Lozinka: </th>
+      <th><input type="password" [(ngModel)]="password" name="password" required></th>
+    </tr>
+    <tr>
+      <td colspan="2">
+        <button (click)="login()">Uloguj se</button>
+      </td>
+    </tr>
+  </table>
+
+  <hr>
+
+  <div>
+  <h3>Spisak dekoratera</h3>
+
+  <ul>
+    <li *ngFor="let user of decorators">
+      {{ user.firstname }} {{ user.lastname }}
+    </li>
+  </ul>
+
+  <hr>
+
+  <div>
+  <h3>Ukupan broj dekoratera: {{ decorators.length }}</h3>
+  <h3>Ukupan broj vlasnika: {{ owners.length }}</h3>
+  </div>
+
+  <table>
+    <tr>
+      <th colspan="3">Ukupan broj obrađenih bašti: {{ doneBookings.length }}</th>
+    </tr>
+    <tr>
+      <th colspan="3">Ukupan broj zakazivanja</th>
+    </tr>
+    <tr>
+      <th>u poslednja 24 sata:</th>
+      <th>u poslednjih 7 dana:</th>
+      <th>u poslednjih 30 dana:</th>
+    </tr>
+    <tr>
+      <td>{{bookings24h.length}}</td>
+      <td>{{bookings7d.length}}</td>
+      <td>{{bookings30d.length}}</td>
+    </tr>
+  </table>
+</div>
+
+  <hr>
+
+  <div *ngIf="firms.length > 0; else noFirms">
+    <h3>Spisak Firmi</h3>
+
+    <input type="text" [(ngModel)]="searchName" (input)="onSearch()" placeholder="Pretraži po nazivu firme" />
+    <input type="text" [(ngModel)]="searchAddress" (input)="onSearch()" placeholder="Pretraži po adresi firme" />
+
+    <table>
+      <thead>
+        <tr>
+          <th (click)="onSort('name')">Naziv {{ sortColumn === 'name' ? (sortDirection === 'asc' ? '↑' : '↓') : '' }}</th>
+          <th (click)="onSort('address')">Adresa {{ sortColumn === 'address' ? (sortDirection === 'asc' ? '↑' : '↓') : '' }}</th>
+          <th>Dekorateri</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let firm of filteredFirms">
+          <td>{{ firm.name }}</td>
+          <td>{{ firm.address }}</td>
+          <td>
+            <ul>
+              <li *ngFor="let decorator of firm.decorators">
+                {{ decorator.firstname }} {{ decorator.lastname }}
+              </li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <ng-template #noFirms>
+    <p>No firms available.</p>
+  </ng-template>
+</main>
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <p>&copy; 2024 Vaša kompanija. Sva prava zadržana.</p>
+  </footer>
+

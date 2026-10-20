@@ -1,0 +1,56 @@
+<body style="background-image: url('assets/pictureFirms.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh; margin: 0; padding: 0;">
+
+  <!-- Header -->
+  <header>
+  </header>
+  <br><br>
+
+  <!-- Main Content -->
+  <main>
+    <div *ngIf="firms.length > 0; else noFirms">
+      <h2>Spisak Firmi</h2>
+      
+      <input type="text" [(ngModel)]="searchName" (input)="onSearch()" placeholder="Pretraži po nazivu firme" />
+      <input type="text" [(ngModel)]="searchAddress" (input)="onSearch()" placeholder="Pretraži po adresi firme" />
+      
+      <table>
+        <thead>
+          <tr>
+            <th (click)="onSort('name')">Naziv {{ sortColumn === 'name' ? (sortDirection === 'asc' ? '↑' : '↓') : '' }}</th>
+            <th (click)="onSort('address')">Adresa {{ sortColumn === 'address' ? (sortDirection === 'asc' ? '↑' : '↓') : '' }}</th>
+            <th>Dekorateri</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let firm of filteredFirms">
+            <td>
+              <!-- <a [routerLink]="['/firm-info']">{{ firm.name }}</a> -->
+              <a (click)="navigateToFirm(firm.name)">{{ firm.name }}</a>
+            </td>
+            <td>{{ firm.address }}</td>
+            <td>
+              <ul>
+                <li *ngFor="let decorator of firm.decorators">
+                  {{ decorator.firstname }} {{ decorator.lastname }}
+                </li>
+              </ul>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <br>
+      <h2>Prikaz podataka iz JSON fajla</h2>
+      <input type="file" (change)="onFileSelected($event)" accept=".json">
+      <canvas id="jsonCanvas" width="600" height="400" style="border: 1px solid #ccc;"></canvas>
+    <ng-template #noFirms>
+      <p>No firms available.</p>
+    </ng-template>
+  </main>
+  <br><br><br>
+
+  <!-- Footer -->
+  <footer>
+    <hr>
+    <p>&copy; 2024 Vaša kompanija. Sva prava zadržana.</p>
+  </footer>

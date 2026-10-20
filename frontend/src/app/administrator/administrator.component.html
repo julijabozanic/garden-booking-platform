@@ -1,0 +1,110 @@
+<body style="background-color: rgba(119, 223, 124, 0.8); height: 100vh; margin: 0; padding: 0;">
+
+<header>
+  <a class="nav-link" (click)="logout()">Odjavi se</a>
+</header>
+
+<main>
+  <h3>Spisak vlasnika</h3>
+  <ul>
+    <li *ngFor="let o of owners">
+      {{ o.firstname }} {{ o.lastname }}
+      <div class="button-container">
+      <button (click)="selectUserForUpdate(o)">Ažuriraj</button>&nbsp;&nbsp;
+      <button (click)="updateActivated(o)">Promeni aktivnost</button>
+    </div>
+    </li>
+  </ul>
+  <hr>
+  
+  <h3>Spisak dekoratera</h3>
+  <ul>
+    <li *ngFor="let d of decorators">
+      {{ d.firstname }} {{ d.lastname }}
+      <div class="button-container">
+      <button (click)="selectUserForUpdate(d)">Ažuriraj</button>&nbsp;&nbsp;
+      <button (click)="updateActivated(d)">Promeni aktivnost</button>
+    </div>
+    </li>
+  </ul>
+  <hr>
+  
+  <h3>Spisak firmi</h3>
+  <ul>
+    <li *ngFor="let firm of firms">
+      {{ firm.name }}
+    </li>
+  </ul>
+  <hr>
+  
+  <h3>Spisak zahteva</h3>
+  <ul>
+    <li *ngFor="let rUser of registrationRequests">
+      {{ rUser.firstname }} {{ rUser.lastname }}
+      <div class="button-container">
+      <button (click)="acceptRequest(rUser)">Prihvati</button>&nbsp;&nbsp;
+      <button (click)="declineRequest(rUser)">Odbij</button>
+    </div>
+    </li>
+  </ul>
+  <hr>
+  
+  <h3>Unos nove firme</h3>
+  <form #registerFirmForm="ngForm" (ngSubmit)="registerFirm()">
+    <table>
+      <tr>
+        <th>Naziv: </th>
+        <td><input type="text" [(ngModel)]="firm.name" name="name" required></td>
+      </tr>
+      <tr>
+        <th>Adresa: </th>
+        <td><input type="text" [(ngModel)]="firm.address" name="address" required></td>
+      </tr>
+      <tr>
+        <th>Lokacija na mapi: </th>
+        <td><input type="text" [(ngModel)]="firm.location" name="location" required></td>
+      </tr>
+      <tr>
+        <th>Kontakt osoba za firmu: </th>
+        <td><input type="text" [(ngModel)]="firm.contact" name="contact" required></td>
+      </tr>
+      <tr>
+        <th colspan="2">Izaberite dekoratera: </th>
+      </tr>
+      <tr *ngFor="let decorator of freeDecorators; let j = index">
+        <td>{{ decorator.firstname }} {{ decorator.lastname }}</td>
+        <td><input type="checkbox" [(ngModel)]="selectedDecorators[j]" name="decorator{{j}}"></td>
+      </tr>
+      <tr>
+        <th>Početak odmora: </th>
+        <td><input type="date" [(ngModel)]="firm.vacationFrom" name="vacationFrom" required></td>
+      </tr>
+      <tr>
+        <th>Kraj odmora: </th>
+        <td><input type="date" [(ngModel)]="firm.vacationTo" name="vacationTo" required></td>
+      </tr>
+    </table>
+    <table>
+      <tr *ngFor="let service of firm.services; let i = index">
+        <th>Usluga {{ i + 1 }}: </th>
+        <td><input type="text" [(ngModel)]="service.name" name="serviceName{{i}}" required></td>
+        <th>Cena: </th>
+        <td><input type="number" [(ngModel)]="service.price" name="servicePrice{{i}}" required></td>
+        <td>
+          <button type="button" (click)="removeService(i)">Ukloni</button>
+        </td>
+      </tr>
+    </table>
+    <button type="button" (click)="addService()">Dodaj novu uslugu</button>
+    <br>
+    <button type="submit">Registruj firmu</button>
+  </form>
+  <hr>
+
+  <app-register title="Registracija novih dekoratera"></app-register>
+  <hr>
+  <app-profile *ngIf="selectedUser" [loggedUser]="selectedUser"></app-profile>
+</main>
+
+<footer>
+</footer>

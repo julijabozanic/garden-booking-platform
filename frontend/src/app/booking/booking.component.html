@@ -1,0 +1,91 @@
+<body style="background-image: url('assets/pictureBooking.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh; margin: 0; padding: 0;">
+
+<!-- Zaglavlje stranice -->
+<header>
+</header>
+
+<br><br>
+
+<!-- Glavni deo stranice -->
+<main>
+  <!-- Tabela za korisnike sa tipom 'D' -->
+  <h2>Zakazivanja</h2>
+  <table *ngIf="user.type === 'D'">
+    <thead>
+      <tr>
+        <th>Vreme zakazivanja</th>
+        <th>Za kad je zakazano</th>
+        <th>Firma</th>
+        <th>Usluge</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of bookings">
+        <td *ngIf="booking.firmname === user.firm && !booking.done">{{ booking.bookingDate | date:'short' }}</td>
+        <td *ngIf="booking.firmname === user.firm && !booking.done">{{ booking.dateTime | date:'short' }}</td>
+        <td *ngIf="booking.firmname === user.firm && !booking.done">{{ booking.firmname }}</td>
+        <td *ngIf="booking.firmname === user.firm && !booking.done">
+          <ul>
+            <li *ngFor="let service of booking.services">
+              {{ service.name }} - {{ service.price }} RSD
+            </li>
+          </ul>
+        </td>
+        <!-- Dugme za prihvatanje -->
+        <td *ngIf="booking.firmname === user.firm && booking.decorator === '' && !booking.done">
+          <button (click)="acceptBooking(booking)">Prihvati</button>
+        </td>
+        <!-- Dugme za odbijanje i polje za unos komentara -->
+        <td *ngIf="booking.firmname === user.firm && booking.decorator === '' && !booking.done">
+          <!-- Dugme "Odbij" koje otvara polje za unos komentara -->
+          <button *ngIf="selectedBookingForComment !== booking" (click)="showCommentField(booking)">Odbij</button>
+
+          <!-- Polje za unos komentara koje se prikazuje samo za odabrani booking -->
+          <div *ngIf="selectedBookingForComment === booking">
+            <textarea [(ngModel)]="rejectedBooking.comment" placeholder="Unesite komentar" rows="3" cols="30"></textarea>
+            <br/>
+            <button [disabled]="!rejectedBooking.comment || rejectedBooking.comment.trim() === ''" (click)="submitRejectBooking(booking)">Odbij</button>
+            <button (click)="cancelReject()">Otkaži</button>
+          </div>
+        </td>
+        <!-- Dugme za završavanje posla -->
+        <td *ngIf="booking.firmname === user.firm && booking.decorator === user.username && !booking.done">
+          <button (click)="doneBooking(booking)">Završi posao</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Tabela za korisnike sa tipom 'O' -->
+  <table *ngIf="user.type === 'O'">
+    <thead>
+      <tr>
+        <th>Vreme zakazivanja</th>
+        <th>Za kad je zakazano</th>
+        <th>Firma</th>
+        <th>Usluge</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let booking of bookings">
+        <td *ngIf="booking.username == user.username">{{ booking.bookingDate | date:'short' }}</td>
+        <td *ngIf="booking.username == user.username">{{ booking.dateTime | date:'short' }}</td>
+        <td *ngIf="booking.username == user.username">{{ booking.firmname }}</td>
+        <td *ngIf="booking.username == user.username">
+          <ul>
+            <li *ngFor="let service of booking.services">
+              {{ service.name }} - {{ service.price }} RSD
+            </li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</main>
+
+<br><br>
+
+<footer>
+  <hr>
+  <p>&copy; 2024 Vaša kompanija. Sva prava zadržana.</p>
+</footer>

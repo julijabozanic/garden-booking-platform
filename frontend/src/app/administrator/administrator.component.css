@@ -1,0 +1,158 @@
+/* Osnovni stilovi za telo */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Stil za header */
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Poravnanje po vertikali u sredinu */
+    background-color: rgba(56, 142, 60, 0.8);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  header a.nav-link {
+    color: white; /* Postavlja boju teksta na belu */
+    text-decoration: none; /* Uklanja podvlačenje linka */
+    font-size: 16px; /* Podesi veličinu fonta */
+    margin-left: auto; /* Pomera link ka desnoj strani */
+  }
+  
+  header a.nav-link:hover {
+    color: #ccc; /* Svetlija nijansa bele prilikom hovera */
+  }
+  
+  /* Stil za glavni sadržaj */
+  main {
+    flex: 1;
+    padding: 20px;
+    max-width: 80%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  }
+
+  header h1 {
+    margin: 0; /* Uklanjanje margine */
+    font-size: 24px; /* Veličina fonta naslova */
+  }
+  
+  /* Poboljšani stil za naslove */
+  h3 {
+    font-size: 2em; /* Povećana veličina fonta */
+    color: #2e7d32; /* Tamnija zelena boja naslova */
+    background-color: rgba(255, 255, 255, 0.9); /* Bela blago transparentna pozadina */
+    padding: 10px; /* Dodaje padding oko teksta */
+    border-radius: 5px; /* Zaobljeni uglovi */
+    text-align: center; /* Centriranje naslova */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Dodata blaga senka */
+    margin-bottom: 20px; /* Razmak ispod naslova */
+  }
+  
+  
+  /* Stil za liste */
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  li {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  li .button-container {
+    display: flex;
+    gap: 10px; /* Razmak između dugmadi */
+  }
+  
+  /* Stil za tabele */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #388E3C;
+    color: white;
+  }
+  
+  td {
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+
+  td.buttons-column {
+    width: 150px; /* Postavi odgovarajuću širinu za kolonu sa dugmadi */
+  }
+  
+  /* Stil za input elemente */
+  input[type="text"], input[type="date"], input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+  }
+  
+  /* Stil za checkbox */
+  input[type="checkbox"] {
+    transform: scale(1.5);
+    margin-right: 10px;
+  }
+  
+  /* Stil za dugmad */
+  button {
+    padding: 10px;
+    background-color: #388E3C;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+  }
+  
+  button:hover {
+    background-color: #2e7d32;
+  }
+  
+  button[type="button"] {
+    width: auto;
+    margin-left: 10px;
+  }
+  
+  /* Stil za footer */
+  footer {
+    background-color: rgba(56, 142, 60, 0.8);
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  

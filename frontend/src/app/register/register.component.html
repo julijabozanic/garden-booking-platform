@@ -1,0 +1,77 @@
+<body style="background-image: url('assets/somegarden.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh; margin: 0; padding: 0;">
+
+    <header>
+      <h1>{{ title }}</h1>
+    </header>
+    
+  <br><br>
+    <main>
+      <form #registerForm="ngForm" (ngSubmit)="register()">
+        <table>
+          <tr>
+            <th>Korisnicko ime: </th>
+            <th><input type="text" [(ngModel)]="user.username" name="username" (blur)="validateUsername()" required></th>
+          </tr>
+          <tr>
+            <th>Lozinka: </th>
+            <th>
+              <input type="password" [(ngModel)]="user.password" name="password" (blur)="validatePassword()" required>
+            </th>
+          </tr>
+          <tr>
+            <th>Ime: </th>
+            <th><input type="text" [(ngModel)]="user.firstname" name="firstname" required></th>
+          </tr>
+          <tr>
+            <th>Prezime: </th>
+            <th><input type="text" [(ngModel)]="user.lastname" name="lastname" required></th>
+          </tr>
+          <tr>
+            <th>Pol: </th>
+            <th>
+              <select [(ngModel)]="selectedGender" name="sex" required>
+                <option *ngFor="let gender of genders" [value]="gender">{{ gender }}</option>
+              </select>
+            </th>
+          </tr>
+          <tr>
+            <th>Adresa: </th>
+            <th><input type="text" [(ngModel)]="user.address" name="address" required></th>
+          </tr>
+          <tr>
+            <th>Telefon: </th>
+            <th><input type="text" [(ngModel)]="user.telephone" name="telephone" required></th>
+          </tr>
+          <tr>
+            <th>Email adresa: </th>
+            <th>
+              <input type="email" [(ngModel)]="user.email" name="email" (blur)="validateEmail()" required>
+            </th>
+          </tr>
+          <tr>
+            <th>Profilna slika: </th>
+            <th>
+              <input type="file" (change)="onFileChange($event)" accept=".jpg, .png">
+            </th>
+            <th>
+              <img *ngIf="profileImage" [src]="profileImage" alt="Profilna slika" class="profile-image">
+              <img *ngIf="!profileImage" src="assets/defaultP.jpg" alt="Podrazumevana slika" class="profile-image">
+            </th>
+          </tr>
+          <tr>
+            <th>Broj kreditne kartice: </th>
+            <th><input type="text" name="card" [(ngModel)]="user.card" required (ngModelChange)="validateCard()"></th>
+            <th><img *ngIf="cardType" [src]="cardType" alt="Card Type Icon" class="card-icon"></th>
+          </tr>
+        </table>
+        <button type="submit">Registruj se</button>
+        <br/>
+        <br/>
+        <a routerLink="/">Povratak na pocetnu stranu</a>
+      </form>
+    </main>
+<br><br>
+
+    <footer>
+      <p>&copy; 2024 Moja Kompanija. Sva prava zadržana.</p>
+    </footer>

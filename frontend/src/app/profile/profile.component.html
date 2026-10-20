@@ -1,0 +1,64 @@
+<body style="background-image: url('assets/pictureProfile.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh; margin: 0; padding: 0;">
+
+<header>
+</header>
+
+<br><br>
+
+<main>
+  <div *ngIf="loggedUser">
+    <h2>Profil</h2>
+    <form (ngSubmit)="updateProfile()">
+      <div>
+        <label for="username">Korisnicko ime: <b>{{loggedUser.username}}</b></label> 
+      </div>
+      <div *ngIf="isAdministrator()">
+        <label for="password">Lozinka: </label>
+        <input type="password" id="password" [(ngModel)]="loggedUser.password" name="password" required>
+      </div>
+      <div>
+        <label for="firstname">Ime: </label>
+        <input id="firstname" [(ngModel)]="loggedUser.firstname" name="firstname" required>
+      </div>
+      <div>
+        <label for="lastname">Prezime: </label>
+        <input id="lastname" [(ngModel)]="loggedUser.lastname" name="lastname" required>
+      </div>
+      <div *ngIf="isAdministrator()">
+        <label for="sex">Pol: </label>
+        <select [(ngModel)]="loggedUser.sex" name="sex" required>
+          <option *ngFor="let gender of genders" [value]="gender">{{ gender }}</option>
+        </select>
+      </div>
+      <div>
+        <label for="address">Adresa: </label>
+        <input id="address" [(ngModel)]="loggedUser.address" name="address" required>
+      </div>
+      <div>
+        <label for="telephone">Kontakt telefon: </label>
+        <input id="telephone" [(ngModel)]="loggedUser.telephone" name="telephone" required>
+      </div>
+      <div>
+        <label for="email">Email adresa: </label>
+        <input id="email" type="email" [(ngModel)]="loggedUser.email" name="email" required>
+      </div>
+      <div *ngIf="isOwner() || isAdministrator()">
+        <label for="card">Broj kreditne kartice: </label>
+        <input id="card" [(ngModel)]="loggedUser.card" name="card" required>
+      </div>
+      <div>
+        <label for="picture">Profilna slika: </label>
+        <input id="picture" type="file" (change)="onFileChange($event)">
+        <img *ngIf="loggedUser.picture" [src]="loggedUser.picture" alt="Profilna slika" class="profile-photo">
+      </div>
+      <button type="submit">Ažuriraj</button>
+    </form>
+  </div>
+</main>
+
+<br><br>
+
+<footer>
+  <hr>
+  <p>&copy; 2024 Vaša kompanija. Sva prava zadržana.</p>
+</footer>

@@ -1,0 +1,30 @@
+<body style="background-image: url('assets/pictureFirmInfo.jpg'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh; margin: 0; padding: 0;">
+
+
+<header>
+</header>
+  
+  <main>
+    <section>
+      <h2>Broj zakazivanja po mesecima</h2>
+      <canvas id="bookingChart"></canvas>
+    </section>
+  
+    <section>
+      <h2>Dijagrami po firmama</h2>
+      <div *ngFor="let firm of firms">
+        <h3>{{ firm.name }}</h3>
+        <canvas id="pieChart-{{ firm.name }}" width="100" height="100"></canvas>
+      </div>
+    </section>
+  
+    <section>
+      <h2>Histogram Zakazivanja</h2>
+      <canvas id="histogramChart"></canvas>
+    </section>
+  </main>
+  
+  <footer>
+    <p>&copy; 2024 Moja Kompanija. Sva prava zadržana.</p>
+  </footer>
+  

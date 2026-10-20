@@ -1,0 +1,362 @@
+[
+  {
+    "_id": {
+      "$oid": "700000000000000000000001"
+    },
+    "username": "demo_owner_01",
+    "password": "$2b$10$nU.7LOZQRahfALpj.onX/ui4/cRc/eaLxjwf0rWv/e5FoiVf450Ne",
+    "firstname": "Demo",
+    "lastname": "Owner01",
+    "sex": "Ž",
+    "address": "Demo ulica 1, Testograd",
+    "telephone": "0600000001",
+    "email": "demo_owner_01@example.test",
+    "picture": "",
+    "card": "4111111111111111",
+    "type": "O",
+    "salt": "$2b$10$nU.7LOZQRahfALpj.onX/",
+    "activated": true,
+    "free": true,
+    "firm": ""
+  },
+  {
+    "_id": {
+      "$oid": "700000000000000000000002"
+    },
+    "username": "demo_owner_02",
+    "password": "$2b$10$nU.7LOZQRahfALpj.onX/ui4/cRc/eaLxjwf0rWv/e5FoiVf450Ne",
+    "firstname": "Demo",
+    "lastname": "Owner02",
+    "sex": "Ž",
+    "address": "Demo ulica 2, Testograd",
+    "telephone": "0600000002",
+    "email": "demo_owner_02@example.test",
+    "picture": "",
+    "card": "4111111111111111",
+    "type": "O",
+    "salt": "$2b$10$nU.7LOZQRahfALpj.onX/",
+    "activated": true,
+    "free": true,
+    "firm": ""
+  },
+  {
+    "_id": {
+      "$oid": "700000000000000000000003"
+    },
+    "username": "demo_owner_03",
+    "password": "$2b$10$nU.7LOZQRahfALpj.onX/ui4/cRc/eaLxjwf0rWv/e5FoiVf450Ne",
+    "firstname": "Demo",
+    "lastname": "Owner03",
+    "sex": "M",
+    "address": "Demo ulica 3, Testograd",
+    "telephone": "0600000003",
+    "email": "demo_owner_03@example.test",
+    "picture": "",
+    "card": "4111111111111111",
+    "type": "O",
+    "salt": "$2b$10$nU.7LOZQRahfALpj.onX/",
+    "activated": true,
+    "free": true,
+    "firm": ""
+  },
+  {
+    "_id": {
+      "$oid": "700000000000000000000004"
+    },
+    "username": "demo_decorator_01",
+    "password": "$2b$10$nU.7LOZQRahfALpj.onX/ui4/cRc/eaLxjwf0rWv/e5FoiVf450Ne",
+    "firstname": "Demo",
+    "lastname": "Decorator01",
+    "sex": "Ž",
+    "address": "Demo ulica 4, Testograd",
+    "telephone": "0600000004",
+    "email": "demo_decorator_01@example.test",
+    "picture": "",
+    "card": "4111111111111111",
+    "type": "D",
+    "salt": "$2b$10$nU.7LOZQRahfALpj.onX/",
+    "activated": true,
+    "free": false,
+    "firm": "Demo Garden Studio 01"
+  },
+  {
+    "_id": {
+      "$oid": "700000000000000000000005"
+    },
+    "username": "demo_decorator_02",
+    "password": "$2b$10$nU.7LOZQRahfALpj.onX/ui4/cRc/eaLxjwf0rWv/e5FoiVf450Ne",
+    "firstname": "Demo",
+    "lastname": "Decorator02",
+    "sex": "M",
+    "address": "Demo ulica 5, Testograd",
+    "telephone": "0600000005",
+    "email": "demo_decorator_02@example.test",
+    "picture": "",
+    "card": "4111111111111111",
+    "type": "D",
+    "salt": "$2b$10$nU.7LOZQRahfALpj.onX/",
+    "activated": true,
+    "free": false,
+    "firm": "Demo Garden Studio 01"
+  },
+  {
+    "_id": {
+      "$oid": "700000000000000000000006"
+    },
+    "username": "demo_decorator_03",
+    "password": "$2b$10$nU.7LOZQRahfALpj.onX/ui4/cRc/eaLxjwf0rWv/e5FoiVf450Ne",
+    "firstname": "Demo",
+    "lastname": "Decorator03",
+    "sex": "Ž",
+    "address": "Demo ulica 6, Testograd",
+    "telephone": "0600000006",
+    "email": "demo_decorator_03@example.test",
+    "picture": "",
+    "card": "4111111111111111",
+    "type": "D",
+    "salt": "$2b$10$nU.7LOZQRahfALpj.onX/",
+    "activated": true,
+    "free": false,
+    "firm": "Demo Garden Studio 03"
+  },
+  {
+    "_id": {
+      "$oid": "700000000000000000000007"
+    },
+    "username": "demo_decorator_04",
+    "password": "$2b$10$nU.7LOZQRahfALpj.onX/ui4/cRc/eaLxjwf0rWv/e5FoiVf450Ne",
+    "firstname": "Demo",
+    "lastname": "Decorator04",
+    "sex": "M",
+    "address": "Demo ulica 7, Testograd",
+    "telephone": "0600000007",
+    "email": "demo_decorator_04@example.test",
+    "picture": "",
+    "card": "4111111111111111",
+    "type": "D",
+    "salt": "$2b$10$nU.7LOZQRahfALpj.onX/",
+    "activated": true,
+    "free": false,
+    "firm": "Demo Garden Studio 03"
+  },
+  {
+    "_id": {
+      "$oid": "700000000000000000000008"
+    },
+    "username": "demo_decorator_05",
+    "password": "$2b$10$nU.7LOZQRahfALpj.onX/ui4/cRc/eaLxjwf0rWv/e5FoiVf450Ne",
+    "firstname": "Demo",
+    "lastname": "Decorator05",
+    "sex": "M",
+    "address": "Demo ulica 8, Testograd",
+    "telephone": "0600000008",
+    "email": "demo_decorator_05@example.test",
+    "picture": "",
+    "card": "4111111111111111",
+    "type": "D",
+    "salt": "$2b$10$nU.7LOZQRahfALpj.onX/",
+    "activated": true,
+    "free": true,
+    "firm": ""
+  },
+  {
+    "_id": {
+      "$oid": "700000000000000000000009"
+    },
+    "username": "demo_admin_01",
+    "password": "$2b$10$nU.7LOZQRahfALpj.onX/ui4/cRc/eaLxjwf0rWv/e5FoiVf450Ne",
+    "firstname": "Demo",
+    "lastname": "Admin01",
+    "sex": "M",
+    "address": "Demo ulica 9, Testograd",
+    "telephone": "0600000009",
+    "email": "demo_admin_01@example.test",
+    "picture": "",
+    "card": "4111111111111111",
+    "type": "A",
+    "salt": "$2b$10$nU.7LOZQRahfALpj.onX/",
+    "activated": true,
+    "free": true,
+    "firm": ""
+  },
+  {
+    "_id": {
+      "$oid": "70000000000000000000000a"
+    },
+    "username": "demo_admin_02",
+    "password": "$2b$10$nU.7LOZQRahfALpj.onX/ui4/cRc/eaLxjwf0rWv/e5FoiVf450Ne",
+    "firstname": "Demo",
+    "lastname": "Admin02",
+    "sex": "M",
+    "address": "Demo ulica 10, Testograd",
+    "telephone": "0600000010",
+    "email": "demo_admin_02@example.test",
+    "picture": "",
+    "card": "4111111111111111",
+    "type": "A",
+    "salt": "$2b$10$nU.7LOZQRahfALpj.onX/",
+    "activated": true,
+    "free": true,
+    "firm": ""
+  },
+  {
+    "_id": {
+      "$oid": "70000000000000000000000b"
+    },
+    "username": "demo_admin_03",
+    "password": "$2b$10$nU.7LOZQRahfALpj.onX/ui4/cRc/eaLxjwf0rWv/e5FoiVf450Ne",
+    "firstname": "Demo",
+    "lastname": "Admin03",
+    "sex": "Ž",
+    "address": "Demo ulica 11, Testograd",
+    "telephone": "0600000011",
+    "email": "demo_admin_03@example.test",
+    "picture": "",
+    "card": "4111111111111111",
+    "type": "A",
+    "salt": "$2b$10$nU.7LOZQRahfALpj.onX/",
+    "activated": true,
+    "free": true,
+    "firm": ""
+  },
+  {
+    "_id": {
+      "$oid": "70000000000000000000000c"
+    },
+    "username": "demo_decorator_06",
+    "password": "$2b$10$nU.7LOZQRahfALpj.onX/ui4/cRc/eaLxjwf0rWv/e5FoiVf450Ne",
+    "firstname": "Demo",
+    "lastname": "Decorator06",
+    "sex": "Ž",
+    "address": "Demo ulica 12, Testograd",
+    "telephone": "0600000012",
+    "email": "demo_decorator_06@example.test",
+    "picture": "",
+    "card": "4111111111111111",
+    "type": "D",
+    "salt": "$2b$10$nU.7LOZQRahfALpj.onX/",
+    "activated": true,
+    "free": false,
+    "firm": "Demo Garden Studio 02"
+  },
+  {
+    "_id": {
+      "$oid": "70000000000000000000000d"
+    },
+    "username": "demo_decorator_07",
+    "password": "$2b$10$nU.7LOZQRahfALpj.onX/ui4/cRc/eaLxjwf0rWv/e5FoiVf450Ne",
+    "firstname": "Demo",
+    "lastname": "Decorator07",
+    "sex": "M",
+    "address": "Demo ulica 13, Testograd",
+    "telephone": "0600000013",
+    "email": "demo_decorator_07@example.test",
+    "picture": "",
+    "card": "4111111111111111",
+    "type": "D",
+    "salt": "$2b$10$nU.7LOZQRahfALpj.onX/",
+    "activated": true,
+    "free": false,
+    "firm": "Demo Garden Studio 02"
+  },
+  {
+    "_id": {
+      "$oid": "70000000000000000000000e"
+    },
+    "username": "demo_decorator_08",
+    "password": "$2b$10$nU.7LOZQRahfALpj.onX/ui4/cRc/eaLxjwf0rWv/e5FoiVf450Ne",
+    "firstname": "Demo",
+    "lastname": "Decorator08",
+    "sex": "M",
+    "address": "Demo ulica 14, Testograd",
+    "telephone": "0600000014",
+    "email": "demo_decorator_08@example.test",
+    "picture": "",
+    "card": "4111111111111111",
+    "type": "D",
+    "salt": "$2b$10$nU.7LOZQRahfALpj.onX/",
+    "activated": true,
+    "free": true,
+    "firm": ""
+  },
+  {
+    "_id": {
+      "$oid": "70000000000000000000000f"
+    },
+    "username": "demo_decorator_09",
+    "password": "$2b$10$nU.7LOZQRahfALpj.onX/ui4/cRc/eaLxjwf0rWv/e5FoiVf450Ne",
+    "firstname": "Demo",
+    "lastname": "Decorator09",
+    "sex": "Ž",
+    "address": "Demo ulica 15, Testograd",
+    "telephone": "0600000015",
+    "email": "demo_decorator_09@example.test",
+    "picture": "",
+    "card": "4111111111111111",
+    "type": "D",
+    "salt": "$2b$10$nU.7LOZQRahfALpj.onX/",
+    "activated": true,
+    "free": false,
+    "firm": "Demo Garden Studio 04"
+  },
+  {
+    "_id": {
+      "$oid": "700000000000000000000010"
+    },
+    "username": "demo_decorator_10",
+    "password": "$2b$10$nU.7LOZQRahfALpj.onX/ui4/cRc/eaLxjwf0rWv/e5FoiVf450Ne",
+    "firstname": "Demo",
+    "lastname": "Decorator10",
+    "sex": "Ž",
+    "address": "Demo ulica 16, Testograd",
+    "telephone": "0600000016",
+    "email": "demo_decorator_10@example.test",
+    "picture": "",
+    "card": "4111111111111111",
+    "type": "D",
+    "salt": "$2b$10$nU.7LOZQRahfALpj.onX/",
+    "activated": true,
+    "free": false,
+    "firm": "Demo Garden Studio 04"
+  },
+  {
+    "_id": {
+      "$oid": "700000000000000000000011"
+    },
+    "username": "demo_owner_04",
+    "password": "$2b$10$nU.7LOZQRahfALpj.onX/ui4/cRc/eaLxjwf0rWv/e5FoiVf450Ne",
+    "firstname": "Demo",
+    "lastname": "Owner04",
+    "sex": "Ž",
+    "address": "Demo ulica 17, Testograd",
+    "telephone": "0600000017",
+    "email": "demo_owner_04@example.test",
+    "picture": "",
+    "card": "4111111111111111",
+    "type": "O",
+    "salt": "$2b$10$nU.7LOZQRahfALpj.onX/",
+    "activated": true,
+    "free": true,
+    "firm": ""
+  },
+  {
+    "_id": {
+      "$oid": "700000000000000000000012"
+    },
+    "username": "demo_owner_05",
+    "password": "$2b$10$nU.7LOZQRahfALpj.onX/ui4/cRc/eaLxjwf0rWv/e5FoiVf450Ne",
+    "firstname": "Demo",
+    "lastname": "Owner05",
+    "sex": "Ž",
+    "address": "Demo ulica 18, Testograd",
+    "telephone": "0600000018",
+    "email": "demo_owner_05@example.test",
+    "picture": "",
+    "card": "4111111111111111",
+    "type": "O",
+    "salt": "$2b$10$nU.7LOZQRahfALpj.onX/",
+    "activated": true,
+    "free": true,
+    "firm": ""
+  }
+]

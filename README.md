@@ -1,8 +1,5 @@
 # Garden Booking Platform
 
-> **Repository migration in progress:** The Angular and Express source files are being transferred. Binary assets from `frontend/src/assets/` and the complete demo database are not available in this snapshot yet; a fresh checkout is not ready to run. The original private project remains intact.
-
-
 A full-stack university project for booking garden landscaping and maintenance services, developed for the Internet Applications Programming (PIA) course at the University of Belgrade, Faculty of Electrical Engineering.
 
 ## Features
